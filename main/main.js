@@ -1,16 +1,16 @@
-module.exports = function main(distance,parkTime) {
+module.exports = function main(inputs) {
     var summary=6;
-    if(distance<2)
+    if(inputs.distance<2)
     {
-        summary=summary+0.25*parkTime;
+        summary=summary+0.25*inputs.parkTime;
     }
-    else if(distance<8)
+    else if(inputs.distance<8)
     {
-        summary=summary+0.25*parkTime+0.8*(distance-2);
+        summary=summary+0.25*inputs.parkTime+0.8*(inputs.distance-2);
     }
     else
     {
-        summary=summary+4.8+(distance-8)*1.2+0.25*parkTime;
+        summary=summary+4.8+(inputs.distance-8)*1.2+0.25*inputs.parkTime;
     }
     return Math.round(summary);
 };
